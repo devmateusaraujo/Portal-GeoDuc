@@ -2,14 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
-  const btnVerMais = document.querySelector('.btn-ver-mais');
-  if (btnVerMais) {
-    btnVerMais.addEventListener('click', () => {
-      alert('Em breve: mais conteúdo do Portal GeoDuc!');
-    });
-  }
-
   const btnHelpText   = document.querySelector('.btn-help-text');
   const btnHelpAvatar = document.querySelector('.btn-help-avatar');
 

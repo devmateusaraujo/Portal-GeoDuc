@@ -21,6 +21,7 @@
           </div>
         </div>
         <div class="chat-header-actions">
+          <button class="chat-btn-icon" id="btnClear" title="Limpar conversa">&#x1F5D1;</button>
           <button class="chat-btn-icon" id="btnExpand" title="Expandir">&#x26F6;</button>
           <button class="chat-btn-icon" id="btnClose" title="Fechar">&#x2715;</button>
         </div>
@@ -56,6 +57,7 @@
   const btnSend   = document.getElementById('btnSend');
   const btnClose  = document.getElementById('btnClose');
   const btnExpand = document.getElementById('btnExpand');
+  const btnClear  = document.getElementById('btnClear');
   const btnAvatar = document.getElementById('btnHelpAvatar');
   const btnText   = document.getElementById('btnHelpText');
   const badge     = document.getElementById('chatBadge');
@@ -78,6 +80,17 @@
   btnAvatar.addEventListener('click', () => isOpen ? closeChat() : openChat());
   btnText.addEventListener('click',   () => isOpen ? closeChat() : openChat());
   btnClose.addEventListener('click',  closeChat);
+
+  btnClear.addEventListener('click', () => {
+    history.length = 0;
+    messages.innerHTML = `
+      <div class="chat-msg assistant">
+        <img src="img/persona.png" alt="Prof. Xande" class="msg-avatar" />
+        <div class="msg-bubble">
+          Oi, meu filho! Beleza? Eu sou o Professor Xande Bezerra, mas pode me chamar de Prof. Xande! Aqui pra tirar suas dúvidas de Geografia e História a qualquer hora. Bora estudar? 📚
+        </div>
+      </div>`;
+  });
 
   btnExpand.addEventListener('click', () => {
     isExpanded = !isExpanded;
